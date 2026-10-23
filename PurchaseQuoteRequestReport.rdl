@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Purchase_Quote_Header_Document_Type">
+          <DataField>Purchase_Quote_Header_Document_Type</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Header_No_">
+          <DataField>Purchase_Quote_Header_No_</DataField>
+        </Field>
+        <Field Name="Quotation_Request_Vendors__Quotation_Request_Vendors___Document_No__">
+          <DataField>Quotation_Request_Vendors__Quotation_Request_Vendors___Document_No__</DataField>
+        </Field>
+        <Field Name="TODAY">
+          <DataField>TODAY</DataField>
+        </Field>
+        <Field Name="Quotation_Request_Vendors__Quotation_Request_Vendors___Vendor_Name_">
+          <DataField>Quotation_Request_Vendors__Quotation_Request_Vendors___Vendor_Name_</DataField>
+        </Field>
+        <Field Name="companyinfo_Picture">
+          <DataField>companyinfo_Picture</DataField>
+        </Field>
+        <Field Name="vendAddress">
+          <DataField>vendAddress</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Header___Expected_Closing_Date_">
+          <DataField>Purchase_Quote_Header___Expected_Closing_Date_</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Header___Expected_Closing_Date__Control1102755076">
+          <DataField>Purchase_Quote_Header___Expected_Closing_Date__Control1102755076</DataField>
+        </Field>
+        <Field Name="Quotation_Request_Vendors__Quotation_Request_Vendors___Document_No___Control1000000001">
+          <DataField>Quotation_Request_Vendors__Quotation_Request_Vendors___Document_No___Control1000000001</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Header___Posting_Description_">
+          <DataField>Purchase_Quote_Header___Posting_Description_</DataField>
+        </Field>
+        <Field Name="P_o_Box_30746__Tel__254_020_247277__Fax__254020_310223Caption">
+          <DataField>P_o_Box_30746__Tel__254_020_247277__Fax__254020_310223Caption</DataField>
+        </Field>
+        <Field Name="THE_KENYATTA_INTERNATIONAL_CONFERENCE_CENTRECaption">
+          <DataField>THE_KENYATTA_INTERNATIONAL_CONFERENCE_CENTRECaption</DataField>
+        </Field>
+        <Field Name="for_supply_of___________________________________Caption">
+          <DataField>for_supply_of___________________________________Caption</DataField>
+        </Field>
+        <Field Name="ORIGINALCaption">
+          <DataField>ORIGINALCaption</DataField>
+        </Field>
+        <Field Name="DataItem1102755005">
+          <DataField>DataItem1102755005</DataField>
+        </Field>
+        <Field Name="DataItem1102755007">
+          <DataField>DataItem1102755007</DataField>
+        </Field>
+        <Field Name="REQUEST_FOR_QUOTATIONCaption">
+          <DataField>REQUEST_FOR_QUOTATIONCaption</DataField>
+        </Field>
+        <Field Name="Fill__Sign_And_Return_The_Original_To_Simlaw_Seed_Company_Limited__Even_If_You_Have_Not_Quoted_Caption">
+          <DataField>Fill__Sign_And_Return_The_Original_To_Simlaw_Seed_Company_Limited__Even_If_You_Have_Not_Quoted_Caption</DataField>
+        </Field>
+        <Field Name="Days_to_DeliverCaption">
+          <DataField>Days_to_DeliverCaption</DataField>
+        </Field>
+        <Field Name="RemarksCaption">
+          <DataField>RemarksCaption</DataField>
+        </Field>
+        <Field Name="Country_of_OriginCaption">
+          <DataField>Country_of_OriginCaption</DataField>
+        </Field>
+        <Field Name="BrandCaption">
+          <DataField>BrandCaption</DataField>
+        </Field>
+        <Field Name="Quotation_No_____________________________________________________Caption">
+          <DataField>Quotation_No_____________________________________________________Caption</DataField>
+        </Field>
+        <Field Name="Unit_PriceCaption">
+          <DataField>Unit_PriceCaption</DataField>
+        </Field>
+        <Field Name="a__THIS_IS_NOT_AN_ORDER__Read_the_conditions_and_instructions_on_reverse_before_quoting_Caption">
+          <DataField>a__THIS_IS_NOT_AN_ORDER__Read_the_conditions_and_instructions_on_reverse_before_quoting_Caption</DataField>
+        </Field>
+        <Field Name="Quantity_RequiredCaption">
+          <DataField>Quantity_RequiredCaption</DataField>
+        </Field>
+        <Field Name="b__This_Quotation_should_be_submitted_in_a_plain_wax_sealed_envelope_markedCaption">
+          <DataField>b__This_Quotation_should_be_submitted_in_a_plain_wax_sealed_envelope_markedCaption</DataField>
+        </Field>
+        <Field Name="d___Return_the_Original_copy_and_retain_the_duplicate_for_your_records_Caption">
+          <DataField>d___Return_the_Original_copy_and_retain_the_duplicate_for_your_records_Caption</DataField>
+        </Field>
+        <Field Name="Quotation_No__Caption">
+          <DataField>Quotation_No__Caption</DataField>
+        </Field>
+        <Field Name="You_are_invited_to_submit_Quotation_on_materials_listed_below_Caption">
+          <DataField>You_are_invited_to_submit_Quotation_on_materials_listed_below_Caption</DataField>
+        </Field>
+        <Field Name="UnitCaption">
+          <DataField>UnitCaption</DataField>
+        </Field>
+        <Field Name="Date_Caption">
+          <DataField>Date_Caption</DataField>
+        </Field>
+        <Field Name="Item_DescriptionCaption">
+          <DataField>Item_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="Seller_s_Name_and_Address_Caption">
+          <DataField>Seller_s_Name_and_Address_Caption</DataField>
+        </Field>
+        <Field Name="CodeCaption">
+          <DataField>CodeCaption</DataField>
+        </Field>
+        <Field Name="NOTE_Caption">
+          <DataField>NOTE_Caption</DataField>
+        </Field>
+        <Field Name="To_Caption">
+          <DataField>To_Caption</DataField>
+        </Field>
+        <Field Name="Quotation_Request_Vendors_Vendor_No_">
+          <DataField>Quotation_Request_Vendors_Vendor_No_</DataField>
+        </Field>
+        <Field Name="Quotation_Request_Vendors_Document_Type">
+          <DataField>Quotation_Request_Vendors_Document_Type</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Line__Unit_of_Measure_">
+          <DataField>Purchase_Quote_Line__Unit_of_Measure_</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Line_Quantity">
+          <DataField>Purchase_Quote_Line_Quantity</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Line_QuantityFormat">
+          <DataField>Purchase_Quote_Line_QuantityFormat</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Line_Description">
+          <DataField>Purchase_Quote_Line_Description</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Line__Purchase_Quote_Line___No__">
+          <DataField>Purchase_Quote_Line__Purchase_Quote_Line___No__</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Line__Extended_Order_Description_">
+          <DataField>Purchase_Quote_Line__Extended_Order_Description_</DataField>
+        </Field>
+        <Field Name="Date_____________________________________________________________________________________________________________Caption">
+          <DataField>Date_____________________________________________________________________________________________________________Caption</DataField>
+        </Field>
+        <Field Name="DataItem1102755059">
+          <DataField>DataItem1102755059</DataField>
+        </Field>
+        <Field Name="DataItem1102755060">
+          <DataField>DataItem1102755060</DataField>
+        </Field>
+        <Field Name="DataItem1102755061">
+          <DataField>DataItem1102755061</DataField>
+        </Field>
+        <Field Name="Seller_s_Signature___________________________________________________________________________________________Caption">
+          <DataField>Seller_s_Signature___________________________________________________________________________________________Caption</DataField>
+        </Field>
+        <Field Name="Opened_By_Caption">
+          <DataField>Opened_By_Caption</DataField>
+        </Field>
+        <Field Name="DataItem1102755064">
+          <DataField>DataItem1102755064</DataField>
+        </Field>
+        <Field Name="FOR_OFFICIAL_USE_ONLYCaption">
+          <DataField>FOR_OFFICIAL_USE_ONLYCaption</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Line_Document_Type">
+          <DataField>Purchase_Quote_Line_Document_Type</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Line_Document_No_">
+          <DataField>Purchase_Quote_Line_Document_No_</DataField>
+        </Field>
+        <Field Name="Purchase_Quote_Line_Line_No_">
+          <DataField>Purchase_Quote_Line_Line_No_</DataField>
+        </Field>
+        <Field Name="DataItem1102755019">
+          <DataField>DataItem1102755019</DataField>
+        </Field>
+        <Field Name="V2_The_offer_shall_remain_firm_for_30_days_from_the_closing_date_unless_otherwise_stipulated_by_the_seller_Caption">
+          <DataField>V2_The_offer_shall_remain_firm_for_30_days_from_the_closing_date_unless_otherwise_stipulated_by_the_seller_Caption</DataField>
+        </Field>
+        <Field Name="DataItem1102755066">
+          <DataField>DataItem1102755066</DataField>
+        </Field>
+        <Field Name="DataItem1102755067">
+          <DataField>DataItem1102755067</DataField>
+        </Field>
+        <Field Name="CONDITIONSCaption">
+          <DataField>CONDITIONSCaption</DataField>
+        </Field>
+        <Field Name="INSTRUCTIONSCaption">
+          <DataField>INSTRUCTIONSCaption</DataField>
+        </Field>
+        <Field Name="DataItem1102755070">
+          <DataField>DataItem1102755070</DataField>
+        </Field>
+        <Field Name="V2_Quote_on_each_item_separately__and_in_units_as_specified_Caption">
+          <DataField>V2_Quote_on_each_item_separately__and_in_units_as_specified_Caption</DataField>
+        </Field>
+        <Field Name="V3_This_form_must_be_signed_by_a_competent_person_and_preferably_it_should_be_rubber_stamped_Caption">
+          <DataField>V3_This_form_must_be_signed_by_a_competent_person_and_preferably_it_should_be_rubber_stamped_Caption</DataField>
+        </Field>
+        <Field Name="DataItem1102755073">
+          <DataField>DataItem1102755073</DataField>
+        </Field>
+        <Field Name="DataItem1102755074">
+          <DataField>DataItem1102755074</DataField>
+        </Field>
+        <Field Name="Quotation_Request_Vendors2_Document_No_">
+          <DataField>Quotation_Request_Vendors2_Document_No_</DataField>
+        </Field>
+        <Field Name="Quotation_Request_Vendors2_Vendor_No_">
+          <DataField>Quotation_Request_Vendors2_Vendor_No_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

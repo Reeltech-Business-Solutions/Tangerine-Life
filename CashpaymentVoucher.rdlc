@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Particulars">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Particulars</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Particulars</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PreparedBy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PreparedBy</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PreparedBy</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CheckedBy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CheckedBy</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CheckedBy</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ApprovedBy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ApprovedBy</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ApprovedBy</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="No_VoucherHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_VoucherHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_VoucherHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AccountName_VoucherHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>AccountName_VoucherHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>AccountName_VoucherHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AmountLCY_VoucherHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>AmountLCY_VoucherHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>AmountLCY_VoucherHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PostingDate_VoucherHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PostingDate_VoucherHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PostingDate_VoucherHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Narration_VoucherHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Narration_VoucherHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Narration_VoucherHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AccountName_VoucherLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>AccountName_VoucherLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>AccountName_VoucherLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Name_CompanyInformationCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Name_CompanyInformationCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Name_CompanyInformationCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Address_CompanyInformationCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Address_CompanyInformationCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Address_CompanyInformationCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Address2_CompanyInformationCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Address2_CompanyInformationCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Address2_CompanyInformationCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="SourceDesc">
+          <DataField>SourceDesc</DataField>
+        </Field>
+        <Field Name="No_VoucherHeader">
+          <DataField>No_VoucherHeader</DataField>
+        </Field>
+        <Field Name="AccountName_VoucherHeader">
+          <DataField>AccountName_VoucherHeader</DataField>
+        </Field>
+        <Field Name="AmountLCY_VoucherHeader">
+          <DataField>AmountLCY_VoucherHeader</DataField>
+        </Field>
+        <Field Name="AmountLCY_VoucherHeaderFormat">
+          <DataField>AmountLCY_VoucherHeaderFormat</DataField>
+        </Field>
+        <Field Name="PostingDate_VoucherHeader">
+          <DataField>PostingDate_VoucherHeader</DataField>
+        </Field>
+        <Field Name="Date______FORMAT__Posting_Date__">
+          <DataField>Date______FORMAT__Posting_Date__</DataField>
+        </Field>
+        <Field Name="ABS_Voucher_Header__Amount_LCY">
+          <DataField>ABS_Voucher_Header__Amount_LCY</DataField>
+        </Field>
+        <Field Name="ABS_Voucher_Header__Amount_LCYFormat">
+          <DataField>ABS_Voucher_Header__Amount_LCYFormat</DataField>
+        </Field>
+        <Field Name="ABS__Voucher_Header___Amount__LCY______Voucher_Header___Credit_Amount__">
+          <DataField>ABS__Voucher_Header___Amount__LCY______Voucher_Header___Credit_Amount__</DataField>
+        </Field>
+        <Field Name="ABS__Voucher_Header___Amount__LCY______Voucher_Header___Credit_Amount__Format">
+          <DataField>ABS__Voucher_Header___Amount__LCY______Voucher_Header___Credit_Amount__Format</DataField>
+        </Field>
+        <Field Name="Rs____NumberText_1_______NumberText_2_">
+          <DataField>Rs____NumberText_1_______NumberText_2_</DataField>
+        </Field>
+        <Field Name="Narration_VoucherHeader">
+          <DataField>Narration_VoucherHeader</DataField>
+        </Field>
+        <Field Name="CurrencyCode_VoucherHeader">
+          <DataField>CurrencyCode_VoucherHeader</DataField>
+        </Field>
+        <Field Name="ExchangeRate_VoucherHeader">
+          <DataField>ExchangeRate_VoucherHeader</DataField>
+        </Field>
+        <Field Name="ExchangeRate_VoucherHeaderFormat">
+          <DataField>ExchangeRate_VoucherHeaderFormat</DataField>
+        </Field>
+        <Field Name="CrText">
+          <DataField>CrText</DataField>
+        </Field>
+        <Field Name="DocumentNo_VoucherLine">
+          <DataField>DocumentNo_VoucherLine</DataField>
+        </Field>
+        <Field Name="AccountNo_VoucherLine">
+          <DataField>AccountNo_VoucherLine</DataField>
+        </Field>
+        <Field Name="AccountName_VoucherLine">
+          <DataField>AccountName_VoucherLine</DataField>
+        </Field>
+        <Field Name="DebitAmount_VoucherLine">
+          <DataField>DebitAmount_VoucherLine</DataField>
+        </Field>
+        <Field Name="DebitAmount_VoucherLineFormat">
+          <DataField>DebitAmount_VoucherLineFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount_VoucherLine">
+          <DataField>CreditAmount_VoucherLine</DataField>
+        </Field>
+        <Field Name="CreditAmount_VoucherLineFormat">
+          <DataField>CreditAmount_VoucherLineFormat</DataField>
+        </Field>
+        <Field Name="AmountLCY_VoucherLine">
+          <DataField>AmountLCY_VoucherLine</DataField>
+        </Field>
+        <Field Name="AmountLCY_VoucherLineFormat">
+          <DataField>AmountLCY_VoucherLineFormat</DataField>
+        </Field>
+        <Field Name="DrText">
+          <DataField>DrText</DataField>
+        </Field>
+        <Field Name="CrText1">
+          <DataField>CrText1</DataField>
+        </Field>
+        <Field Name="Name_CompanyInformation">
+          <DataField>Name_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Address_CompanyInformation">
+          <DataField>Address_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Address2_CompanyInformation">
+          <DataField>Address2_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Picture_CompanyInformation">
+          <DataField>Picture_CompanyInformation</DataField>
+        </Field>
+        <Field Name="HomePage_CompanyInformation">
+          <DataField>HomePage_CompanyInformation</DataField>
+        </Field>
+        <Field Name="PhoneNo_CompanyInformation">
+          <DataField>PhoneNo_CompanyInformation</DataField>
+        </Field>
+        <Field Name="EMail_CompanyInformation">
+          <DataField>EMail_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Integer_Number">
+          <DataField>Integer_Number</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

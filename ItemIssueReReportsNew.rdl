@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="AppliedEntrytoAdjust">
+          <DataField>AppliedEntrytoAdjust</DataField>
+        </Field>
+        <Field Name="AppliestoEntry">
+          <DataField>AppliestoEntry</DataField>
+        </Field>
+        <Field Name="Area1">
+          <DataField>Area1</DataField>
+        </Field>
+        <Field Name="AssembletoOrder">
+          <DataField>AssembletoOrder</DataField>
+        </Field>
+        <Field Name="CompletelyInvoiced">
+          <DataField>CompletelyInvoiced</DataField>
+        </Field>
+        <Field Name="ContractCode">
+          <DataField>ContractCode</DataField>
+        </Field>
+        <Field Name="Correction">
+          <DataField>Correction</DataField>
+        </Field>
+        <Field Name="CostAmountActual">
+          <DataField>CostAmountActual</DataField>
+        </Field>
+        <Field Name="CostAmountActualFormat">
+          <DataField>CostAmountActualFormat</DataField>
+        </Field>
+        <Field Name="CostAmountActualACY">
+          <DataField>CostAmountActualACY</DataField>
+        </Field>
+        <Field Name="CostAmountActualACYFormat">
+          <DataField>CostAmountActualACYFormat</DataField>
+        </Field>
+        <Field Name="CostAmountExpected">
+          <DataField>CostAmountExpected</DataField>
+        </Field>
+        <Field Name="CostAmountExpectedFormat">
+          <DataField>CostAmountExpectedFormat</DataField>
+        </Field>
+        <Field Name="CostAmountExpectedACY">
+          <DataField>CostAmountExpectedACY</DataField>
+        </Field>
+        <Field Name="CostAmountExpectedACYFormat">
+          <DataField>CostAmountExpectedACYFormat</DataField>
+        </Field>
+        <Field Name="CostAmountNonInvtbl">
+          <DataField>CostAmountNonInvtbl</DataField>
+        </Field>
+        <Field Name="CostAmountNonInvtblFormat">
+          <DataField>CostAmountNonInvtblFormat</DataField>
+        </Field>
+        <Field Name="CostAmountNonInvtblACY">
+          <DataField>CostAmountNonInvtblACY</DataField>
+        </Field>
+        <Field Name="CostAmountNonInvtblACYFormat">
+          <DataField>CostAmountNonInvtblACYFormat</DataField>
+        </Field>
+        <Field Name="CountryRegionCode">
+          <DataField>CountryRegionCode</DataField>
+        </Field>
+        <Field Name="DerivedfromBlanketOrder">
+          <DataField>DerivedfromBlanketOrder</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="DimensionSetID">
+          <DataField>DimensionSetID</DataField>
+        </Field>
+        <Field Name="DocumentDate">
+          <DataField>DocumentDate</DataField>
+        </Field>
+        <Field Name="DocumentLineNo">
+          <DataField>DocumentLineNo</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="DocumentType">
+          <DataField>DocumentType</DataField>
+        </Field>
+        <Field Name="DriverName">
+          <DataField>DriverName</DataField>
+        </Field>
+        <Field Name="DriverNo">
+          <DataField>DriverNo</DataField>
+        </Field>
+        <Field Name="DropShipment">
+          <DataField>DropShipment</DataField>
+        </Field>
+        <Field Name="EntryNo">
+          <DataField>EntryNo</DataField>
+        </Field>
+        <Field Name="EntryType">
+          <DataField>EntryType</DataField>
+        </Field>
+        <Field Name="EntryExitPoint">
+          <DataField>EntryExitPoint</DataField>
+        </Field>
+        <Field Name="ExpirationDate">
+          <DataField>ExpirationDate</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo">
+          <DataField>ExternalDocumentNo</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code">
+          <DataField>GlobalDimension1Code</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code">
+          <DataField>GlobalDimension2Code</DataField>
+        </Field>
+        <Field Name="InvoicedQuantity">
+          <DataField>InvoicedQuantity</DataField>
+        </Field>
+        <Field Name="InvoicedQuantityFormat">
+          <DataField>InvoicedQuantityFormat</DataField>
+        </Field>
+        <Field Name="ItemCategoryCode">
+          <DataField>ItemCategoryCode</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="ItemReferenceNo">
+          <DataField>ItemReferenceNo</DataField>
+        </Field>
+        <Field Name="ItemTracking">
+          <DataField>ItemTracking</DataField>
+        </Field>
+        <Field Name="JobNo">
+          <DataField>JobNo</DataField>
+        </Field>
+        <Field Name="JobPurchase">
+          <DataField>JobPurchase</DataField>
+        </Field>
+        <Field Name="JobTaskNo">
+          <DataField>JobTaskNo</DataField>
+        </Field>
+        <Field Name="LastInvoiceDate">
+          <DataField>LastInvoiceDate</DataField>
+        </Field>
+        <Field Name="LocationCode">
+          <DataField>LocationCode</DataField>
+        </Field>
+        <Field Name="LotNo">
+          <DataField>LotNo</DataField>
+        </Field>
+        <Field Name="NoSeries">
+          <DataField>NoSeries</DataField>
+        </Field>
+        <Field Name="Nonstock">
+          <DataField>Nonstock</DataField>
+        </Field>
+        <Field Name="Open">
+          <DataField>Open</DataField>
+        </Field>
+        <Field Name="OrderLineNo">
+          <DataField>OrderLineNo</DataField>
+        </Field>
+        <Field Name="OrderNo">
+          <DataField>OrderNo</DataField>
+        </Field>
+        <Field Name="OrderType">
+          <DataField>OrderType</DataField>
+        </Field>
+        <Field Name="OriginallyOrderedNo">
+          <DataField>OriginallyOrderedNo</DataField>
+        </Field>
+        <Field Name="OriginallyOrderedVarCode">
+          <DataField>OriginallyOrderedVarCode</DataField>
+        </Field>
+        <Field Name="OutofStockSubstitution">
+          <DataField>OutofStockSubstitution</DataField>
+        </Field>
+        <Field Name="PRFNo">
+          <DataField>PRFNo</DataField>
+        </Field>
+        <Field Name="PackageNo">
+          <DataField>PackageNo</DataField>
+        </Field>
+        <Field Name="Positive">
+          <DataField>Positive</DataField>
+        </Field>
+        <Field Name="PostingDate">
+          <DataField>PostingDate</DataField>
+        </Field>
+        <Field Name="ProdOrderCompLineNo">
+          <DataField>ProdOrderCompLineNo</DataField>
+        </Field>
+        <Field Name="PurchaseAmountActual">
+          <DataField>PurchaseAmountActual</DataField>
+        </Field>
+        <Field Name="PurchaseAmountActualFormat">
+          <DataField>PurchaseAmountActualFormat</DataField>
+        </Field>
+        <Field Name="PurchaseAmountExpected">
+          <DataField>PurchaseAmountExpected</DataField>
+        </Field>
+        <Field Name="PurchaseAmountExpectedFormat">
+          <DataField>PurchaseAmountExpectedFormat</DataField>
+        </Field>
+        <Field Name="PurchasingCode">
+          <DataField>PurchasingCode</DataField>
+        </Field>
+        <Field Name="QtyperUnitofMeasure">
+          <DataField>QtyperUnitofMeasure</DataField>
+        </Field>
+        <Field Name="QtyperUnitofMeasureFormat">
+          <DataField>QtyperUnitofMeasureFormat</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="RFQNo">
+          <DataField>RFQNo</DataField>
+        </Field>
+        <Field Name="RemainingQuantity">
+          <DataField>RemainingQuantity</DataField>
+        </Field>
+        <Field Name="RemainingQuantityFormat">
+          <DataField>RemainingQuantityFormat</DataField>
+        </Field>
+        <Field Name="ReservedQuantity">
+          <DataField>ReservedQuantity</DataField>
+        </Field>
+        <Field Name="ReservedQuantityFormat">
+          <DataField>ReservedQuantityFormat</DataField>
+        </Field>
+        <Field Name="ReturnReasonCode">
+          <DataField>ReturnReasonCode</DataField>
+        </Field>
+        <Field Name="SalesAmountActual">
+          <DataField>SalesAmountActual</DataField>
+        </Field>
+        <Field Name="SalesAmountActualFormat">
+          <DataField>SalesAmountActualFormat</DataField>
+        </Field>
+        <Field Name="SalesAmountExpected">
+          <DataField>SalesAmountExpected</DataField>
+        </Field>
+        <Field Name="SalesAmountExpectedFormat">
+          <DataField>SalesAmountExpectedFormat</DataField>
+        </Field>
+        <Field Name="SerialNo">
+          <DataField>SerialNo</DataField>
+        </Field>
+        <Field Name="ShippedQtyNotReturned">
+          <DataField>ShippedQtyNotReturned</DataField>
+        </Field>
+        <Field Name="ShippedQtyNotReturnedFormat">
+          <DataField>ShippedQtyNotReturnedFormat</DataField>
+        </Field>
+        <Field Name="ShortcutDimension3Code">
+          <DataField>ShortcutDimension3Code</DataField>
+        </Field>
+        <Field Name="ShortcutDimension4Code">
+          <DataField>ShortcutDimension4Code</DataField>
+        </Field>
+        <Field Name="ShortcutDimension5Code">
+          <DataField>ShortcutDimension5Code</DataField>
+        </Field>
+        <Field Name="ShortcutDimension6Code">
+          <DataField>ShortcutDimension6Code</DataField>
+        </Field>
+        <Field Name="ShortcutDimension7Code">
+          <DataField>ShortcutDimension7Code</DataField>
+        </Field>
+        <Field Name="ShortcutDimension8Code">
+          <DataField>ShortcutDimension8Code</DataField>
+        </Field>
+        <Field Name="ShptMethodCode">
+          <DataField>ShptMethodCode</DataField>
+        </Field>
+        <Field Name="SourceNo">
+          <DataField>SourceNo</DataField>
+        </Field>
+        <Field Name="SourceType">
+          <DataField>SourceType</DataField>
+        </Field>
+        <Field Name="SystemCreatedAt">
+          <DataField>SystemCreatedAt</DataField>
+        </Field>
+        <Field Name="SystemCreatedBy">
+          <DataField>SystemCreatedBy</DataField>
+        </Field>
+        <Field Name="SystemId">
+          <DataField>SystemId</DataField>
+        </Field>
+        <Field Name="SystemModifiedAt">
+          <DataField>SystemModifiedAt</DataField>
+        </Field>
+        <Field Name="SystemModifiedBy">
+          <DataField>SystemModifiedBy</DataField>
+        </Field>
+        <Field Name="TransactionSpecification">
+          <DataField>TransactionSpecification</DataField>
+        </Field>
+        <Field Name="TransactionType">
+          <DataField>TransactionType</DataField>
+        </Field>
+        <Field Name="TransportMethod">
+          <DataField>TransportMethod</DataField>
+        </Field>
+        <Field Name="TruckNo">
+          <DataField>TruckNo</DataField>
+        </Field>
+        <Field Name="TruckNoNew">
+          <DataField>TruckNoNew</DataField>
+        </Field>
+        <Field Name="UnitofMeasureCode">
+          <DataField>UnitofMeasureCode</DataField>
+        </Field>
+        <Field Name="VariantCode">
+          <DataField>VariantCode</DataField>
+        </Field>
+        <Field Name="WarrantyDate">
+          <DataField>WarrantyDate</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
